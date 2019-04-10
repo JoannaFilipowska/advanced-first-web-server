@@ -17,4 +17,16 @@ A starter repo for the ACA Advanced `My First Web Server` project.
 ## Part 3. Use path variables
 * Give your server the ability to respond to a GET request with a path `/users/:userId` and return the user object from the users array that has the _id == userId
 * Give your server the ability to respond to a PUT request with a path `/users/:userId` and just change any key value on the user object with this _id 
+
+app.put("/users/userId", (req, res) => {
+    let useId = req.paramas,userId;
+    let user = state.users.findIndex(u => u._id == useId);
+    //let user = {
+        //id:req.body.id,
+        //name: req.body.name,
+        //occupation: req.body.occupation, 
+        //avatar:req.body.avatar
+    //};
+    res.send(user);
+});
 * Give your server the ability to respond to a DELETE request with a path `/users/:userId` and find the user with this id from the array. give this user object a new key value isActive:false.  send() back a messsage "deleted"
